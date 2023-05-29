@@ -1,6 +1,8 @@
-FROM alpine:3.16.2
+# FROM alpine:3.16.2
+FROM alpine:3.18
 LABEL maintainer="Markus Kosmal <code@m-ko.de>"
 
+RUN apk update && apk upgrade
 RUN apk add --no-cache bash clamav clamav-daemon clamav-libunrar
 
 COPY conf /etc/clamav
